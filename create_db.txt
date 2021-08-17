@@ -1,0 +1,10 @@
+create database wasteFood;
+use wasteFood;
+
+create table locations ( 
+	id INT(10) AUTO_INCREMENT, 
+	area char(50), 
+	lat float(10,7),
+	long float(10,7),
+	PRIMARY KEY(id) 
+);
