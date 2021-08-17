@@ -4,7 +4,7 @@
 
 	$lat = $_GET["lat"];
 
-	$long = $_GET["long"];
+	$lng = $_GET["long"];
 
 
 
@@ -16,7 +16,7 @@
 
 
 
-	mysqli_query( $connect, "INSERT INTO locations VALUES ( '', '$area', '$lat','$long' )" )
+	mysqli_query( $connect, "INSERT INTO locations VALUES ( '', '$area', '$lat','$lng' )" )
 
 		or die("Can not execute query");
 
