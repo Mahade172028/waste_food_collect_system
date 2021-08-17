@@ -23,6 +23,14 @@
                 $query = "SELECT * FROM donation_table";
                 $query_run = mysqli_query($connection, $query);
             ?>
+            <table id="datatableid" class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                        	<th scope="col"> Id</th>
+                            <th scope="col"> Name</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                    </thead>
             </div>
         </div>
     </div>
