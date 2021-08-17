@@ -1,3 +1,18 @@
+<html>
+<head>
+    <style>
+           body{
+               color:green;
+               margin:15% 20% 50% 30%;
+               background-color:gray;
+               
+           }
+           table{
+               width:80%
+           }
+    </style>
+</head>
+<body style="bgcolor:green;">
 <?php
 	require_once('db_connect.php');
 	$connect = mysqli_connect( HOST, USER, PASS, DB )
@@ -6,7 +21,6 @@
 
 	$results = mysqli_query( $connect, "SELECT * FROM locations" )
 		or die("Can not execute query");
-
 	echo "<table border> \n";
 	echo "<th>Area</th> <th>Delete</th> <th>Map view</th> \n";
 
@@ -23,3 +37,5 @@
 
 	echo "<p><a href=index.html>CREATE a new record</a>";
 ?>
+</body>
+</html>
