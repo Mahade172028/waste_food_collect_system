@@ -26,7 +26,7 @@
 
 
 
-	echo "<p><a href=read.php>READ all records</a>";
+	echo "<p><a href=show_records.php>READ all records</a>";
 
 
 ?>
