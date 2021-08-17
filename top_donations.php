@@ -16,6 +16,13 @@
     		
     		<div class="card">
             <div class="card-body">
+            <?php
+                $connection = mysqli_connect("localhost","root","");
+                $db = mysqli_select_db($connection, 'donation');
+
+                $query = "SELECT * FROM donation_table";
+                $query_run = mysqli_query($connection, $query);
+            ?>
             </div>
         </div>
     </div>
