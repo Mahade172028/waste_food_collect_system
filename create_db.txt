@@ -3,6 +3,7 @@ use wasteFood;
 
 create table locations ( 
 	id INT(10) AUTO_INCREMENT, 
+	detail char(50),
 	area char(50), 
 	lat float(10,7),
 	lng float(10,7),

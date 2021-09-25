@@ -1,5 +1,7 @@
 <?php
 
+    $detail=$_GET["detail"];
+
 	$area = $_GET["address"];
 
 	$lat = $_GET["lat"];
@@ -16,7 +18,7 @@
 
 
 
-	mysqli_query( $connect, "INSERT INTO locations VALUES ( '', '$area', '$lat','$lng' )" )
+	mysqli_query( $connect, "INSERT INTO locations VALUES ( '','$detail', '$area', '$lat','$lng' )" )
 
 		or die("Can not execute query");
 
