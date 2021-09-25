@@ -29,7 +29,7 @@
 		echo "<tr>";
 		echo "<td> $area </td>";
 		echo "<td> <a href = 'delete.php?id=$id'> Delete </a> </td>";
-		echo "<td> <a href = 'single_map.php?id=$id&lat=$lat&lng=$lng'> View </a> </td>";
+		echo "<td> <a href = 'googleMap.php?id=$id&lat=$lat&lng=$lng'> View </a> </td>";
 		echo "</tr> \n";
 	}
 

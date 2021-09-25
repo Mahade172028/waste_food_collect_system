@@ -18,9 +18,16 @@ $lat =$_GET['lat'];
         <link rel="stylesheet" href="">
         <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+
+        <style>
+            .navr{
+               
+            }
+        </style>
+
     </head>
     <body>
-        <h1>Here Your Location</h1>
+        <div class="navr"><h1>Here Your Location</h1> <a href="index.html"> Go Back</a></div>
         
         <div id='map' style='width: 100%; height: 100%;'></div>
         
@@ -29,7 +36,7 @@ $lat =$_GET['lat'];
         var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v10',
-        center: [90.4074,23.7104],
+        center: [<?php echo $lng ?>,<?php echo $lat ?>],
         zoom: 9,
         bearing: 180,
         });
@@ -39,6 +46,7 @@ $lat =$_GET['lat'];
 
        // aa=parseFloat('{{address.long}}');
        // bb=parseFloat('{{address.lat}}');
+       //center: [90.4074,23.7104]
       
         
       
@@ -51,7 +59,7 @@ $lat =$_GET['lat'];
         var marker = new mapboxgl.Marker();
         //marker.setLngLat([90.4074,23.7104]);
       
-        marker.setLngLat([<?php echo $lat ?>,<?php echo $lng ?>]);
+        marker.setLngLat([<?php echo $lng ?>,<?php echo $lat ?>]);
         //.setLngLat([])
         //.setPopup(new mapboxgl.Popup().setHTML("<p></p>"))
         marker.addTo(map);
