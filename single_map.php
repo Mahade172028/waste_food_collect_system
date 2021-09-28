@@ -1,5 +1,5 @@
 <?php
-
+$id=$_GET['id'];
 $lng=$_GET['lng'];
 $lat =$_GET['lat'];
 
@@ -30,13 +30,42 @@ $lat =$_GET['lat'];
         <div class="navr"><h1 style="text-align:center; color:green;">Here Food Location</h1> <a href="index.html"> Go Back</a></div>
         
         <div id='map' style='width: 80%; height: 80%;margin: auto;border-radius: 15px;'></div>
+
+
+        
+
         
         <script type="text/javascript">
+        
+        
+        var lat=0.0;
+        var lng=0.0;
+        
+        //fatching data using ajax query
+        fetch('http://localhost:8080/ShareWasteFood/getDetail.php?id='+<?php echo $id ?>)
+        .then(response => response.json())
+        .then(json => {
+            console.log(json.content[0].area);
+            jj(json.content[0].detail,json.content[0].area,json.content[0].lat,json.content[0].lng);
+        })
+
+       function jj(detail,area,lat,lng) {
+           console.log(detail,lat);
+        
+      
+
+        
+
+
+
+
+
+
         mapboxgl.accessToken = 'pk.eyJ1IjoibWFoYWRlIiwiYSI6ImNrczlicWdjYzAwMDQydnNqanBxY2Rna2gifQ.zl8iQpZYtK1CApveVKEP3Q';
         var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v10',
-        center: [<?php echo $lng ?>,<?php echo $lat ?>],
+        center: [lng,lat],
         zoom: 9,
         bearing: 180,
         });
@@ -46,14 +75,16 @@ $lat =$_GET['lat'];
         var marker = new mapboxgl.Marker();
         //marker.setLngLat([90.4074,23.7104]);
       
-        marker.setLngLat([<?php echo $lng ?>,<?php echo $lat ?>]);
+        marker.setLngLat([lng,lat]);
         //.setLngLat([])
-        marker.setPopup(new mapboxgl.Popup().setHTML("<p>great to see<h1><?php echo $lat ?></h1></p>"));
+        marker.setPopup(new mapboxgl.Popup().setHTML("<p><b>Detail:</b>"+ detail + "</p>"+
+                                                     "<p><b>location:</b>"+ area + "</p>" 
+                                                                                       ));
         marker.addTo(map);
 
      
         
-        
+    }
        
 
         </script>
