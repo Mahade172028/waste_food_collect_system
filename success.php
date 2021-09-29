@@ -66,6 +66,7 @@ if($code == 200 && !( curl_errno($handle)))
 </head>
 <body>
 <section class="my-5">
+	<div class="py-5 m-auto">
 		<h2 class="text-center">Transaction Succeded</h2>
     
 	</div>
