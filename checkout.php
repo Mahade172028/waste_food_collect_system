@@ -3,7 +3,7 @@
 $post_data = array();
 $post_data['store_id'] = "test6149f527de9da";
 $post_data['store_passwd'] = "test6149f527de9da@ssl";
-
+$post_data['total_amount'] = $_GET["amount"];
 $post_data['currency'] = "BDT";
 $post_data['tran_id'] = "SSLCZ_TEST_".uniqid();
 $post_data['success_url'] = "http://localhost/Donation/success.php";
