@@ -12,7 +12,7 @@
 	<div class="py-5">
 		<h2 class="text-center">Donation</h2>
 		</div>
-		<form action="donation_db.php" method="POST">
+		<form action="checkout.php?price=<?php echo $amount?> & name=<?php echo $name?>" method="GET">
 			<div class="w-50 m-auto">
     	<div class="form-group">
     <label >Name:</label>
@@ -26,7 +26,7 @@
       <div class="w-100 ">
     	<div class="form-group">
     <label >Amount:</label>
-    <input type="nu" class="form-control"name="details" value=""required>
+    <input type="text" class="form-control"name="amount" value=""required>
   		</div>
   		<div class="btn-group">
   			<button class="btn btn-default" >
@@ -35,9 +35,12 @@
 <button class="btn btn-default">
      <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" width="120" height="70" />
 </button>
-<button type="submit" class="btn btn-success">Submit</button>
-  		</div>
-		</form>
+</div>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block"> Pay Now
+                </button>
+            </div>
+    </form>
 
 </body>
 </html>

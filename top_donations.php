@@ -11,7 +11,7 @@
 <body>
 	<section class="my-5 ma-auto">
 		<div class="py=5">
-    		<h2 class="text-center">Ongoing Tournaments:</h2>
+    		<h2 class="text-center">Top Donations: </h2>
     		<div class="w-50 m-auto">
     		
     		<div class="card">
@@ -31,6 +31,28 @@
                             <th scope="col">Amount</th>
                         </tr>
                     </thead>
+            <?php
+                if($query_run)
+                {
+                    foreach($query_run as $row)
+                    {
+            ?>
+                    <tbody>
+                        <tr>
+                            <td> <?php echo $row['id']; ?> </td>                            
+                            <td> <?php echo $row['name']; ?> </td>                            
+                            <td> <?php echo $row['amount']; ?> </td>
+                        </tr>
+                    </tbody>
+            <?php           
+                    }
+                }
+                else 
+                {
+                    echo "No Record Found";
+                }
+            ?>
+                </table>
             </div>
         </div>
     </div>
